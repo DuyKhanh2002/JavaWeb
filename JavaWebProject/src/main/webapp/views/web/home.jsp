@@ -23,7 +23,7 @@
 	<!-- Section-->
 	<section class="jumbotron text-center">
 	<div class="container">
-		<h1 class="jumbotron-heading">K&T SHOP CATEGORY</h1>
+		<h1 class="jumbotron-heading">BookStore</h1>
 		<p class="lead text-muted mb-0">Có rất nhiều lựa chọn dành cho bạn</p>
 	</div>
 	
