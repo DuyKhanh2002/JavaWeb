@@ -27,7 +27,6 @@ public class DaoDBConection extends DBConnection  {
 			ps.setString(2, email);
 			ps.setString(3, fullname);
 			ps.setString(4, image);
-
 			ps.setInt(5, roleid);
 			ps.setInt(6,sellerid);
 			ps.setInt(7, status);
@@ -144,6 +143,7 @@ public class DaoDBConection extends DBConnection  {
 				user.setFullname(rs.getString("fullname"));
 				user.setUserId(rs.getInt("userId"));
 				user.setEmail(rs.getString("email"));
+				user.setImages(rs.getString("images"));
 				
 				return user;
 			}
@@ -222,6 +222,25 @@ public class DaoDBConection extends DBConnection  {
 			// TODO: handle exception
 		}
 		return Sum;
+	}
+	public int countEmail(String email) {
+		int count = 0;
+		ResultSet rs = null;
+		String query = "SELECT COUNT(email)\r\n"
+				+ "FROM Users\r\n"
+				+ "WHERE email=?;";
+		try {
+			Connection conn = super.getConnection();
+			PreparedStatement ps = conn.prepareStatement(query);
+			ps.setString(1, email);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				return count = 0+rs.getInt(1);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return count;
 	}
 	public int countCartItemByCartID(int cartID) {
 		int count = 0;

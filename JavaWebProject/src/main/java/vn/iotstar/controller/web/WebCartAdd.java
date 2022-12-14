@@ -93,7 +93,7 @@ public class WebCartAdd extends HttpServlet {
 			
 			int i=1;
 			request.setAttribute("thongbao", i);
-			//response.sendRedirect("/ITProject/category/list");
+			//response.sendRedirect("/JavaWebProject/category/list");
 		}
 		else
 		{
@@ -110,7 +110,7 @@ public class WebCartAdd extends HttpServlet {
 	
 		int i=1;
 		request.setAttribute("thongbao", i);
-		response.sendRedirect("/ITProject/category/list");
+		response.sendRedirect("/JavaWebProject/category/list");
 
 		
 	}

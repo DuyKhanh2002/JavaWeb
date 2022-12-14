@@ -64,7 +64,7 @@ public class AddCartItemOnDeital extends HttpServlet {
 			
 			int i=1;
 			request.setAttribute("thongbao", i);
-			//response.sendRedirect("/ITProject/category/list");
+			
 		}
 		else
 		{
@@ -81,7 +81,7 @@ public class AddCartItemOnDeital extends HttpServlet {
 	
 		int i=1;
 		request.setAttribute("thongbao", i);
-		response.sendRedirect("/ITProject/cart");
+		response.sendRedirect("/JavaWebProject/cart");
 	}
 
 	/**

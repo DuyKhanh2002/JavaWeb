@@ -49,7 +49,7 @@ public class SubtractQuantityControl extends HttpServlet {
 			
 
 		
-		response.sendRedirect("/ITProject/cart");
+		response.sendRedirect("/JavaWebProject/cart");
 	}
 
 	/**

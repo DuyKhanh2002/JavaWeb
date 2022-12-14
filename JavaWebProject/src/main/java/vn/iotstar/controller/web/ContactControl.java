@@ -35,7 +35,7 @@ public class ContactControl extends HttpServlet{
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-//		response.sendRedirect("/ITProject/category/list");
+		
 		RequestDispatcher rd = request.getRequestDispatcher("/views/admin/home.jsp");
 		rd.forward(request, response);
 	}

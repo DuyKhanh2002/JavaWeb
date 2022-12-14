@@ -32,7 +32,7 @@ public class Deletecontrol extends HttpServlet {
 		int cartitemid=Integer.parseInt(request.getParameter("cartitemid"));
 		DaoDBConection DAO= new DaoDBConection();
 		DAO.delete_cartitembycartitemid(cartitemid);
-		response.sendRedirect("/ITProject/cart");
+		response.sendRedirect("/JavaWebProject/cart");
 	}
 
 	/**

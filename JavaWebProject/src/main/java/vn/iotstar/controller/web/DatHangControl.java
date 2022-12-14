@@ -80,7 +80,7 @@ public class DatHangControl extends HttpServlet {
 		cartDAO.update(cartid);
 		Bill bills=DAOBills.findBillByCartID_UserId(cartid.getCartId(),u.getUserId());
 		sessionBill.setAttribute("BILLS",bills);
-		response.sendRedirect("/ITProject/XemLaiDonHang");
+		response.sendRedirect("/JavaWebProject/XemLaiDonHang");
 		
 		
 	}

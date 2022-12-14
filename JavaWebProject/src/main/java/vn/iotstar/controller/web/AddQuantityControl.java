@@ -44,7 +44,7 @@ public class AddQuantityControl extends HttpServlet {
 		float newprice = (float)product.getPrice()+unitprice;
 
 		DAO.Update_CartItem(quantity+1, newprice, pid, cartid, cartitemid);
-		response.sendRedirect("/ITProject/cart");
+		response.sendRedirect("/JavaWebProject/cart");
 	}
 
 	/**

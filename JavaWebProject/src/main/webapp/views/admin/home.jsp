@@ -9,7 +9,7 @@
 <body>
 	 <section class="jumbotron text-center">
     <div class="container">
-        <h1 class="jumbotron-heading">K&T Shop Admin</h1>        
+        <h1 class="jumbotron-heading">BOOK STORE Admin</h1>        
     </div>
 </section>
 </body>

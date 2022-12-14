@@ -97,7 +97,7 @@ public class CheckoutControl extends HttpServlet {
 		String note=request.getParameter("ghichu");
 		String name=request.getParameter("fullname");
 		DAO.Insert_Bills(total, timestamp2, cartid.getCartId(), u.getUserId(), "tien mat", 0, address, note, name, "email", "phone");
-		response.sendRedirect("/ITProject/category/list");
+		response.sendRedirect("/JavaWebProject/category/list");
 	}
 
 }

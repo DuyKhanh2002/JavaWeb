@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import vn.iotstar.controller.SendEmail;
+import vn.iotstar.dao.impl.DaoDBConection;
 import vn.iotstar.dao.impl.UserDaoImpl;
 import vn.iotstar.entity.User;
 
@@ -61,14 +62,21 @@ public class ResetPassword extends HttpServlet {
 		// gửi email đến người dùng
 		String email = request.getParameter("email");
 		String password = NewPassWord();
+		DaoDBConection DAO=new DaoDBConection();
+		int count=0;
+		count=DAO.countEmail(email);
+		if(count==1) {
 		SendEmail(email,"mật khẩu mới của bạn là :"+password+"");
-		
-		
 		// cập nhật lại password mới email đó trong hệ thống 
 		User user = userDao.findUserByEmail(email);
 		user.setPassword(password);
 		userDao.update(user);		
 		request.setAttribute("ThongBao","Mật khẩu mới đã được gửi đến email của bạn !");
+		}
+		else {
+			request.setAttribute("ThongBao","Email không tồn tại hoặc chưa được đăng kí !");
+		}
+	
 		RequestDispatcher rd = request.getRequestDispatcher("/decorators/login.jsp");
 		rd.forward(request, response);
 	}
