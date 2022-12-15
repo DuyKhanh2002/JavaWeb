@@ -24,7 +24,7 @@
 </head>
 
 <body class="img js-fullheight"
-	style="background-image: url(<c:url value='/template/login/images/bg.jpg' />);">
+	style="background-image: url(<c:url value='https://thuthuatnhanh.com/wp-content/uploads/2022/06/Hinh-nen-iPad-4K.jpg' />);">
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">

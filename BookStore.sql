@@ -64,7 +64,7 @@ CREATE TABLE [dbo].[Product](
 	[productName] [nvarchar](200) NULL,
 	[productCode] [bigint] NULL,
 	[categoryId] [int] NULL,
-	[description] [nvarchar](500) NULL,
+	[description] [nvarchar](max) NULL,
 	[price] [float] NULL,
 	[amount] [int] NULL,
 	[stock] [int] NULL,
@@ -100,25 +100,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[Slides](
-	[slideid] [int] IDENTITY(1,1) NOT NULL,
-	[slidename] [nvarchar](200) NULL,
-	[slidelink] [nvarchar](500) NULL,
-	[slidedescription] [nvarchar](500) NULL,
-	[slideimages] [nvarchar](500) NULL,
-	[status] [int] NULL,
-	[slidetype] [int] NULL,
- CONSTRAINT [PK_Slides] PRIMARY KEY CLUSTERED 
-(
-	[slideid] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[UserRoles]    Script Date: 9/19/2022 8:44:04 AM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
+
 CREATE TABLE [dbo].[UserRoles](
 	[roleId] [int] IDENTITY(1,1) NOT NULL,
 	[roleName] [nvarchar](50) NULL,
@@ -272,7 +254,34 @@ insert into Category values(N'Sách Học Ngoại Ngữ',null,1)
 
 --insert into table Product 
 --Văn học
-insert into Product values(N'Từ Điển Tiếng “Em” - Tái Bản 2021','371628','1','',49000,100,0,'https://cdn0.fahasa.com/media/catalog/product/b/i/bia_tudientiengem-_1_.jpg',0,'1','2022-11-29',1)
+insert into Product values(N'Từ Điển Tiếng “Em” - Tái Bản 2021','371628','1',N'
+TỪ ĐIỂN TIẾNG “EM” – Định nghĩa về thế giới mới!
+
+Bạn sẽ bất ngờ, khi cầm cuốn “từ điển” xinh xinh này trên tay.
+
+Và sẽ còn ngạc nhiên hơn nữa, khi bắt đầu đọc từng trang sách…
+
+Dĩ nhiên là vì “Từ điển tiếng “Em” không phải là một cuốn từ điển thông thường rồi!
+
+Nói đến “từ điển”, xưa nay chúng ta đều nghĩ về một bộ sách đồ sộ, giải thích ý nghĩa, cách dùng, dịch, cách phát âm, và thường kèm theo các ví dụ về cách sử dụng từ đó.
+
+Tuy nhiên, với cuốn sách “Từ điển tiếng “em”, các bạn sẽ hết sức bất ngờ với những định nghĩa mới, bắt trend, sáng tạo, thông minh và vô cùng hài hước.
+
+Tiếng “em” [danh từ] ở đây là tiếng lòng của những người yêu sự thật, ghét sự giả dối
+
+Cô đơn [ tính từ ] không phải là không có ai bên cạnh, mà là người mình muốn ở cạnh lại không hề ở bên
+
+Sống lỗi [ động từ ] là cách sống của mấy bạn có người yêu cái là bỏ bê bạn bè liền hà...
+
+Nhưng đây không chỉ là cuốn sách chỉ biết nói dăm ba câu chuyện về tình yêu.
+Còn nhiều hơn thế!
+
+Là những câu cửa miệng của giới trẻ thời nay; là hoạt động tưởng vô bổ nhưng cần thiết cho sự sống: ăn, ngủ, tắm, gội cũng được định nghĩa hết sức dí dỏm... Và cũng không thiếu những “tật xấu, thói hư” nghĩ đến đã thấy “tức cái lồng ngực”...
+
+Và bạn yên tâm, “tập đoàn” Kho Từ Điển điều hành bởi Thịt Kho – Hiệp Thị - 2 chủ xị cho ra đời cuốn sách nhỏ bé xíu xiu nhưng mới mẻ và mặn mà vô cùng này sẽ khiến bạn thoát mác “người tối cổ” cười cả ngày không chán, nhìn bạn bè quanh mình bằng ánh mắt dễ thương, tận hưởng cuộc đời với những định nghĩa hoàn toàn!!!
+
+Cuốn sách này giống như một chiếc hộp Pandora thú vị và hấp dẫn người đọc, vì bạn không thể đoán trước được tác giả sẽ “định nghĩa” câu nói đó theo nghĩa nào, cho ta thêm thích thú với những ngôn từ đáng yêu sử dụng mỗi ngày.
+Vậy nên, ngay bây giờ, bạn đã sẵn sàng để mở ra những điều thú vị trong cuốn sách này chưa!!!',49000,100,0,'https://cdn0.fahasa.com/media/catalog/product/b/i/bia_tudientiengem-_1_.jpg',0,'1','2022-11-29',1)
 insert into Product values(N'Chitose Trong Chai Ramune - Tập 1','3123628','1','',84000,90,0,'https://cdn0.fahasa.com/media/catalog/product/c/h/chitose-trong-chai-ramune---tap-1---ban-gioi-han.jpg',0,'1','2022-11-29',1)
 insert into Product values(N'Nhà Giả Kim (Tái Bản 2020)','123628','1','',55000 ,80,0,'https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_36793.jpg',0,'1','2022-11-29',1)
 insert into Product values(N'Cây Cam Ngọt Của Tôi','4528','1','',75000,70,0,'https://cdn0.fahasa.com/media/catalog/product/i/m/image_217480.jpg',0,'1','2022-11-29',1)
