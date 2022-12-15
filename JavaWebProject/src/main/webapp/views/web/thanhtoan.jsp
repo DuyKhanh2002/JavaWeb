@@ -317,7 +317,7 @@
                 <h6 class="my-0">${o.product.productName}</h6>
                 <small class="text-muted">Số lượng: ${o.quantity}  </small>
               </div>
-              <span class="text-muted">${o.unitPrice} $</span>
+              <span class="text-muted">${o.unitPrice} đ</span>
             </li>
                             
            </core:forEach>
@@ -340,11 +340,11 @@
                 <h6 class="my-0">Mã Giảm Giá</h6>
                 <small>EXAMPLECODE</small>
               </div>
-              <span class="text-success">-0 $</span>
+              <span class="text-success">-0 đ</span>
             </li>
             <li class="list-group-item d-flex justify-content-between">
               <span>Total (USD)</span>
-              <strong>$ ${total}</strong>
+              <strong> ${total} đ</strong>
             </li>
           </ul>
           <!-- Cart -->

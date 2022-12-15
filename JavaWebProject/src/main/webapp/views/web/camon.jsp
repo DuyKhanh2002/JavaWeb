@@ -312,7 +312,7 @@
                 <h6 class="my-0">${o.product.productName}</h6>
                 <small class="text-muted">Số lượng: ${o.quantity}  </small>
               </div>
-              <span class="text-muted">${o.unitPrice} $</span>
+              <span class="text-muted">${o.unitPrice} đ</span>
             </li>
                             
            </core:forEach>

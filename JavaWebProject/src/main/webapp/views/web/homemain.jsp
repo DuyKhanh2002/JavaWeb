@@ -59,7 +59,7 @@
 						</h4>
 						<div class="row">
 							<div class="col">
-								<p class="btn btn-danger btn-block">${top1.price} </p>
+								<p class="btn btn-danger btn-block">${top1.price} đ</p>
 							</div>
 							<div class="col">
 								<a href="${pageContext.request.contextPath}/product/detail?pid=${top1.productId}" class="btn btn-success btn-block">View</a>
@@ -96,10 +96,21 @@
 											<div class="col">
 												<p class="btn btn-danger btn-block">${o.price} đ</p>
 											</div>
+											<core:if test="${empty USERMODEL}">
+						
+					                  <div class="col">
+												<a href="${pageContext.request.contextPath}/login" class="btn btn-success btn-block">Add
+													to cart</a>
+											</div>
+					                      </core:if>
+					     <core:if test="${not empty USERMODEL}">
+
 											<div class="col">
 												<a href="${pageContext.request.contextPath}/cart/add?productid=${o.productId}&price=${o.price}" class="btn btn-success btn-block">Add
 													to cart</a>
 											</div>
+
+					</core:if>
 										</div>
 									</div>
 								</div>
@@ -137,10 +148,22 @@
 											<div class="col">
 												<p class="btn btn-danger btn-block">${o.price} đ</p>
 											</div>
+											<core:if test="${empty USERMODEL}">
+						
+					                  <div class="col">
+												<a href="${pageContext.request.contextPath}/login" class="btn btn-success btn-block">Add
+													to cart</a>
+											</div>
+					                      </core:if>
+					     <core:if test="${not empty USERMODEL}">
+
 											<div class="col">
 												<a href="${pageContext.request.contextPath}/cart/add?productid=${o.productId}&price=${o.price}" class="btn btn-success btn-block">Add
 													to cart</a>
 											</div>
+
+					</core:if>
+											
 										</div>
 									</div>
 								</div>

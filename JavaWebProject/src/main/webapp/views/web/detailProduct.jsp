@@ -48,20 +48,23 @@
 			<div class="col-12 col-lg-6 add_to_cart_block">
 				<div class="card bg-light mb-3">
 					<div class="card-body">
-						<p class="price">$ ${detail.price}</p>
+					
+					  <h1><p class="name">${detail.productName}</p></h1>
+					  <h2><p class="space">  </p>  </h2>
+						<h2><p class="price">Giá:${detail.price} đ</p></h2>
 						<!-- <p class="price_discounted">0 đ </p> -->
 						<form method="get" action="${pageContext.request.contextPath}/addcartitemondetail">
 							<div class="form-group">
-								<label for="colors">SIZE</label> <select class="custom-select"
+								<!-- <label for="colors">SIZE</label> <select class="custom-select"
 									id="colors">
 									<option value="0">38</option>
 									<option value="1">39</option>
 									<option value="2">40</option>
 									<option value="3">41</option>
-								</select>
+								</select> -->
 							</div>
 							<div class="form-group">
-								<label>Quantity :</label>
+								<label>Số lượng:</label>
 								<div class="input-group mb-3">
 									<!-- <div class="input-group-prepend">
 										<button type="button"
@@ -91,7 +94,18 @@
 								class="fa fa-shopping-cart"></i> Add To Cart
 								
 							</a> --%>
-							<button class="btn btn-lg btn-block btn-success text-uppercase">ĐẶT HÀNG</button>
+							
+							<core:if test="${empty USERMODEL}">
+						
+					                 
+												<a href="${pageContext.request.contextPath}/login" class="btn btn-success btn-block">ĐẶT HÀNG</a>
+											
+					                      </core:if>
+					     <core:if test="${not empty USERMODEL}">
+
+											<button class="btn btn-lg btn-block btn-success text-uppercase">ĐẶT HÀNG</button>
+
+					</core:if>
 					<!-- 	</form> -->
 						<div class="product_rassurance">
 							<ul class="list-inline">
@@ -135,7 +149,7 @@
 			<!-- Reviews -->
 			<div class="col-12" id="reviews">
 				<div class="card border-light mb-3">
-					<div class="card-header bg-primary text-white text-uppercase">
+				<!-- 	<div class="card-header bg-primary text-white text-uppercase">
 						<i class="fa fa-comment"></i> Reviews
 					</div>
 					<div class="card-body">
@@ -166,7 +180,7 @@
 							</p>
 							<hr>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
