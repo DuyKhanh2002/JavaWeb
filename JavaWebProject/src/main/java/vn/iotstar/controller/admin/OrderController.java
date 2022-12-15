@@ -357,14 +357,14 @@ public class OrderController extends HttpServlet {
 			String Thong_bao = "";
 			if (cart.getStatus() == 1) {
 				Thong_bao = "Đơn hàng của bạn đã được tiếp nhận và  đang được xử lý ."
-						+ "Cảm ơn bạn đã đặt hàng của của hàng K&T Shop . ";
+						+ "Cảm ơn bạn đã đặt hàng của của hàng BookStore . ";
 			} else if (cart.getStatus() == 2) {
 				Thong_bao = "Đơn hàng của bạn đã được xử lý hoàn tất ."
-						+ "Cảm ơn bạn đã đặt hàng của của hàng K&T Shop . ";
+						+ "Cảm ơn bạn đã đặt hàng của của hàng BookStore . ";
 			} else if (cart.getStatus() == 3) {
-				Thong_bao = "Đơn hàng của bạn đang được tạm giữ ." + "Cảm ơn bạn đã đặt hàng của của hàng K&T Shop . ";
+				Thong_bao = "Đơn hàng của bạn đang được tạm giữ ." + "Cảm ơn bạn đã đặt hàng của của hàng BookStore . ";
 			} else if (cart.getStatus() == 4) {
-				Thong_bao = "Đơn hàng của bạn đã bị hủy bỏ ." + "Cảm ơn bạn đã đặt hàng của của hàng K&T Shop . ";
+				Thong_bao = "Đơn hàng của bạn đã bị hủy bỏ ." + "Cảm ơn bạn đã đặt hàng của của hàng BookStore . ";
 			}
 			// gửi email thông báo cho người dùng đã thay đổi trạng thái đơn hàng String
 

@@ -16,7 +16,7 @@ public class SendEmail {
 		// dia chi email nguoi nhan
 		final String toEmail = email;
 
-		final String subject = "Java Example Test";
+		final String subject = "BOOKSTORE";
 		final String body = content;
 
 		Properties props = new Properties();

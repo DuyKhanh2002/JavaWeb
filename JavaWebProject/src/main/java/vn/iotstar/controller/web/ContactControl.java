@@ -23,8 +23,8 @@ public class ContactControl extends HttpServlet{
 		String email_user = request.getParameter("email");
 		String content_user = request.getParameter("content");
 		
-		String email_admin = "20110576@student.hcmute.edu.vn";
-		String content_admin = " Cảm ơn bạn đã gửi tin nhắn đến Shop !"
+		String email_admin = "duykhanhphan2002@gmail.com";
+		String content_admin = " Cảm ơn bạn đã gửi tin nhắn đến Shop !\n"
 				+ "Shop sẽ sớm hồi đáp lại cho bạn !";
 		SendEmail sendEmail = new SendEmail();
 		try {
