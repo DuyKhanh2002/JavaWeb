@@ -55,7 +55,7 @@ public class SendEmail {
 	public static void main(String[] args) throws MessagingException, UnsupportedEncodingException {
 
 		SendEmail sendEmail = new SendEmail();
-		sendEmail.SendEmail("20110576@student.hcmute.edu.vn", "hello");
+		sendEmail.SendEmail("20110502@student.hcmute.edu.vn", "hello");
 	}
 
 }

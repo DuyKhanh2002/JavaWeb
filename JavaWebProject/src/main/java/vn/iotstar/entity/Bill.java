@@ -47,6 +47,8 @@ public class Bill implements Serializable {
 	@JoinColumn(name="userId")
 	private User user;
 
+
+
 	public Bill() {
 	}
 

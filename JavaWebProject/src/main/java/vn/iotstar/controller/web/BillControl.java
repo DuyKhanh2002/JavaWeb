@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import vn.iotstar.dao.impl.BillDaoImpl;
 import vn.iotstar.dao.impl.CartDaoImpl;
 import vn.iotstar.dao.impl.CartItemDaoImpl;
+import vn.iotstar.dao.impl.DaoDBConection;
 import vn.iotstar.entity.Bill;
 import vn.iotstar.entity.CartItem;
 import vn.iotstar.entity.User;
@@ -66,13 +67,13 @@ public class BillControl extends HttpServlet {
 	//hiển thị riêng một đơn hàng ứng với bill_Id + danh sách những hàng đã được đặt 
 	protected void order(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			
+			DaoDBConection DAO=new DaoDBConection();
 			String bill_Id = request.getParameter("bill_Id");
 			
 			Bill bill = billdao.findBill(Integer.parseInt(bill_Id));
 
 			request.setAttribute("bill", bill);
-			
+			request.setAttribute("total", DAO.totalPriceByCartId(bill.getCart().getCartId()));
 			int cartId = Integer.parseInt(request.getParameter("cartId"));
 			List<CartItem> listcart = cartItemdao.hienthicart(cartId);
 			request.setAttribute("listcart", listcart);
@@ -108,10 +109,10 @@ public class BillControl extends HttpServlet {
 	protected void findAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			HttpSession session = request.getSession();
+			DaoDBConection DAO=new DaoDBConection();
 			User user = (User) session.getAttribute("USERMODEL");
 			int userId = user.getUserId();
 			List<Bill> list  = billdao.findBillByUserId(userId);
-
 			request.setAttribute("bills", list);
 
 		} catch (Exception e) {

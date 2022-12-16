@@ -105,7 +105,7 @@ public class DatHangControl extends HttpServlet {
 		"\nSố Điện thoại: h"+bills.getPhone()+
 		"\nĐịa chỉ giao hàng:"+bills.getAddress()+
 		"\nSản phẩm:\n" + danhsachSP
-		+"\n Tổng tiền hàng:"+ bills.getTotal();
+		+"\n Tổng tiền hàng:"+ bills.getTotal()+ " Đ";
 		
 		SendEmail sendemail = new SendEmail();
 		try {
